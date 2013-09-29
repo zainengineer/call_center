@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Contact Centre Edit Contact</title>
+<link rel="stylesheet" href="style.css" type="text/css" title="contact-centre" />
+<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+</head>
+<body class="contact">
+<h1>Contact Centre</h1>
+<div id="jump">
+<a href="#jumps">jump to content</a>
+</div>
+<nav>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="accounts.html">Accounts</a></li>
+<li><a href="contacts.html">Contacts</a></li>
+<li><a href="events.html">Events</a></li>
+</ul>
+</nav>
+<div class="layout-grid">
+<div id="jumps" class="layout-cell layout-1">
+<div>
+<img src="images/contact.png" alt="Edit Contact" />
+<h2>Edit Contact</h2>
+<p>All fields required.</p>
+<form action="editcontact.php" method="post">
+First Name:
+<input name="firstname" type="text" size="50" maxlength="50">
+<br />
+Last Name:
+<input name="lastname" type="text" size="50" maxlength="50">
+<br />
+Address:
+<input name="address" type="text" size="50" maxlength="50">
+<br />
+Town:
+<input name="town" type="text" size="50" maxlength="50">
+<br />
+<p>State:
+<br />
+<select id="State">
+<option value="ACT">ACT</option>
+<option value="NSW">NSW</option>
+<option value="NT">NT</option>
+<option value="QLD">QLD</option>
+<option value="SA">SA</option>
+<option value="TAS">TAS</option>
+<option value="VIC">VIC</option>
+<option value="WA">WA</option>
+</select>
+<br />
+Post Code:
+<input name="postcode" type="text" size="4" maxlength="4">
+<br />
+Phone:
+<input name="phone" type="text" size="13" maxlength="13">
+<br />
+Mobile Phone:
+<input name="mobilephone" type="text" size="13" maxlength="13">
+<br />
+E-mail:
+<input name="email" type="text" size="50" maxlength="50">
+<br />
+<input name="submit" type="submit" value="Edit Contact">
+<br />
+<input name="reset" type="reset" value="Reset">
+</form>
+</div>
+</div>
+</div><!--/grid-->
+<nav>
+<ul>
+<li><a href="copyright.html">Copyright</a></li>
+<li><a href="disclaimer.html">Disclaimer</a></li>
+<li><a href="privacy.html">Privacy</a></li>
+<li><a href="feedback.html">Feedback</a></li>
+</ul>
+</nav>
+</body>
+</html>
+
+
