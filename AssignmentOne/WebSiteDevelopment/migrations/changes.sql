@@ -1,0 +1,2 @@
+ALTER TABLE `tlogin` ADD `password` VARCHAR( 255 ) NULL AFTER `Email`;
+ALTER TABLE `tlogin` CHANGE `UserID` `UserID` INT( 11 ) NOT NULL AUTO_INCREMENT;
