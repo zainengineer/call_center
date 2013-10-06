@@ -1,34 +1,25 @@
--- phpMyAdmin SQL Dump
--- version 4.0.4
--- http://www.phpmyadmin.net
---
--- Host: localhost
--- Generation Time: Sep 27, 2013 at 11:24 AM
--- Server version: 5.6.13
--- PHP Version: 5.4.16
+/*
+Navicat MySQL Data Transfer
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
+Source Server         : local
+Source Server Version : 50527
+Source Host           : localhost:3306
+Source Database       : contactcentre
 
+Target Server Type    : MYSQL
+Target Server Version : 50527
+File Encoding         : 65001
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+Date: 2013-10-06 17:18:38
+*/
 
---
--- Database: `contactcentre`
---
-CREATE DATABASE IF NOT EXISTS `contactcentre` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `contactcentre`;
+SET FOREIGN_KEY_CHECKS=0;
 
--- --------------------------------------------------------
-
---
--- Table structure for table `tcontact`
---
-
-CREATE TABLE IF NOT EXISTS `tcontact` (
+-- ----------------------------
+-- Table structure for `tcontact`
+-- ----------------------------
+DROP TABLE IF EXISTS `tcontact`;
+CREATE TABLE `tcontact` (
   `ContactID` int(11) NOT NULL DEFAULT '0',
   `Name` varchar(255) NOT NULL,
   `Address` varchar(255) NOT NULL,
@@ -42,20 +33,16 @@ CREATE TABLE IF NOT EXISTS `tcontact` (
   PRIMARY KEY (`ContactID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `tcontact`
---
+-- ----------------------------
+-- Records of tcontact
+-- ----------------------------
+INSERT INTO `tcontact` VALUES ('0', '', '', '', '', '', '', '', '', null);
 
-INSERT INTO `tcontact` (`ContactID`, `Name`, `Address`, `Town`, `State`, `PostCode`, `Phone`, `MobilePhone`, `Email`, `UserID`) VALUES
-(0, '', '', '', '', '', '', '', '', NULL);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tevent`
---
-
-CREATE TABLE IF NOT EXISTS `tevent` (
+-- ----------------------------
+-- Table structure for `tevent`
+-- ----------------------------
+DROP TABLE IF EXISTS `tevent`;
+CREATE TABLE `tevent` (
   `EventID` int(11) NOT NULL DEFAULT '0',
   `Notes` varchar(255) NOT NULL,
   `DateEntered` date NOT NULL,
@@ -64,35 +51,26 @@ CREATE TABLE IF NOT EXISTS `tevent` (
   PRIMARY KEY (`EventID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `tevent`
---
+-- ----------------------------
+-- Records of tevent
+-- ----------------------------
+INSERT INTO `tevent` VALUES ('0', 'Progress of web site and need to review code by November 30, 2013. ', '2013-08-08', '09:18:00', null);
 
-INSERT INTO `tevent` (`EventID`, `Notes`, `DateEntered`, `TimeEntered`, `ContactID`) VALUES
-(0, 'Progress of web site and need to review code by November 30, 2013. ', '2013-08-08', '09:18:00', NULL);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tlogin`
---
-
-CREATE TABLE IF NOT EXISTS `tlogin` (
-  `UserID` int(11) NOT NULL DEFAULT '0',
+-- ----------------------------
+-- Table structure for `tlogin`
+-- ----------------------------
+DROP TABLE IF EXISTS `tlogin`;
+CREATE TABLE `tlogin` (
+  `UserID` int(11) NOT NULL AUTO_INCREMENT,
   `UserName` varchar(255) NOT NULL,
   `Email` varchar(255) NOT NULL,
+  `password` varchar(255) DEFAULT NULL,
   `DateAccessed` date NOT NULL,
   PRIMARY KEY (`UserID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `tlogin`
---
-
-INSERT INTO `tlogin` (`UserID`, `UserName`, `Email`, `DateAccessed`) VALUES
-(0, 'StarTrekCafe', 'startrekcafe@gmail.com', '2013-08-08');
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
+-- ----------------------------
+-- Records of tlogin
+-- ----------------------------
+INSERT INTO `tlogin` VALUES ('1', 'StarTrekCafe', 'startrekcafe@gmail.com', null, '2013-08-08');
+INSERT INTO `tlogin` VALUES ('2', 'UserName', 'email', 'password', '0000-00-00');

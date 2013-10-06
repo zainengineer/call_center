@@ -20,9 +20,19 @@ if (!session_id()){
 </div>
 <nav>
 <ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="login.html">Login</a></li>
-<li><a href="contacts.html">Contacts</a></li>
-<li><a href="events.html">Events</a></li>
+<li><a href="index.php">Home</a></li>
+<li>
+    <?php
+    if (empty($_SESSION['user_id'])){
+        echo '<a href="accounts.php">Login/Create</a>' . "\n\r";
+    }
+    else{
+        echo '<a href="logout.php">Logout</a>'. "\n\r";;
+    }
+    ?>
+
+</li>
+<li><a href="contacts.php">Contacts</a></li>
+<li><a href="events.php">Events</a></li>
 </ul>
 </nav>
