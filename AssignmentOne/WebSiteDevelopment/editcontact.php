@@ -87,7 +87,7 @@ echo "
 </table>
 <p>&nbsp;</p>
 </form>
-<a href="contacts.html">Back to main Contacts page</a>
+<a href="contacts.php">Back to main Contacts page</a>
 
 </div>
 </div>

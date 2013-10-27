@@ -1,92 +1,49 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
-<title>Contact Centre Add Event</title>
-<link rel="stylesheet" href="style.css" type="text/css" title="contact-centre" />
-<script src="//html5shim.googlecode.com/svn/trunk/html5.js">
-</script>
-</head>
-<body class="home">
-<h1>Contact Centre</h1>
-<div id="jump">
-<a href="#jumps">jump to content</a>
-</div>
-<nav>
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="login.html">Login</a></li>
-<li><a href="contacts.html">Contacts</a></li>
-<li><a href="events.html">Events</a></li>
-</ul>
-</nav>
+<?php
+require_once (dirname(__FILE__) . '/lib/common.php');
+forceUserLogin();
+include  (dirname(__FILE__) . '/header.php');
+if (isset($_POST['Submit']))
+{
+$Notes = $_POST['Notes'];
+$DateEntered = $_POST['DateEntered'];
+$TimeEntered = $_POST['TimeEntered'];
+
+$sql = "INSERT INTO tevent VALUES ('', '$Notes', '$DateEntered', '$TimeEntered', '')";
+if (mysql_query($sql))
+  {
+  echo "Record Added";
+  }
+  else
+  {
+  echo "Error : " . mysql_error();
+  }
+}
+?>
 <div class="layout-grid">
-<div class="layout-cell layout-1">
+<div id="jumps" class="layout-cell layout-1">
 <div>
-<img src="images/contact.png" alt="Add Event" />
-<h2>Add Event</h2>
- <?php
-include('scripts/userfunctions.php');
- header(' Location: scripts/validateaddevent.php'); 
-exit;
- <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-<?php
- // Event Notes text area goes here.
-?>
- <p>
- <label for="notes">Notes></label>
- <textarea>
- </textarea>
- <span class="error" id="notes_error">
- <?php echo $msg_notes;
-?>
- // These variables need to match the error variables that are set in the validation script
- </span>
- </p>
-<?php
- // Date entered field goes here.
-?>
- <p>
- <label for="dateentered">Date Entered:</label>
- <input type="text" name="dateentered" id="dateentered" autofocus value="<?php echo $dateentered; ?>">
- <span class="error" id="dateentered_error">
- <?php echo $msg_dateentered;
-?>
-<?php
- // These variables need to match the error variables that are set in the validation script
- </span>
- </p>
-?>
-<?php
- // Time entered field goes here.
-?>
- <p>
- <label for="timeentered">Time Entered:</label>
- <input type="text" name="address" id="timeentered" autofocus value="<?php echo $timeentered; ?>">
- <span class="error" id="timeentered_error">
- <?php echo $msg_timeentered;
-?>
-<?php
- // These variables need to match the error variables that are set in the validation script
-?>
- </span>
- </p>
-<?php
- // Submit and Reset form elements goes here.
- <input type="submit" name="submit" value="Create Account">
- </form>
-?>
+<img src="images/contact.png" alt="Add Contact" />
+<h2>Add Events</h2>
+<p>All fields required.</p>
+<form action="addevent.php" method="post">
+<table>
+<tr><td>Notes</td><td>  <textarea  name='Notes'> </textarea ></td></tr>
+<tr><td>DateEntered</td><td>  <input type='text' name='DateEntered' value='<?php echo date("Y-m-d");?>'></td></tr>
+<tr><td>TimeEntered</td><td>  <input type='text' name='TimeEntered' value='<?php echo date("H:i:s");?>'></td></tr>
+<tr><td><input name="reset" type="reset" value="Reset"></td><td> <input name="Submit" type="submit" id="Submit" value="Add Event"></td></tr>
+
+
+
+</table>
+<p>&nbsp;</p>
+</form>
+<a href="events.php">Back to main Events page</a>
+
 </div>
 </div>
 </div><!--/grid-->
-<nav>
-<ul>
-<li><a href="copyright.html">Copyright</a></li>
-<li><a href="disclaimer.html">Disclaimer</a></li>
-<li><a href="privacy.html">Privacy</a></li>
-<li><a href="feedback.html">Feedback</a></li>
-</ul>
-</nav>
-</body>
-</html>
+
+<?php
+include  (dirname(__FILE__)  . '/footer.php');
+?>
+
