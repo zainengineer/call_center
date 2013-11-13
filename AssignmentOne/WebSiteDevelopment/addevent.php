@@ -19,6 +19,7 @@ if (mysql_query($sql))
   echo "Error : " . mysql_error();
   }
 }
+
 ?>
 <div class="layout-grid">
 <div id="jumps" class="layout-cell layout-1">
@@ -34,7 +35,17 @@ if (mysql_query($sql))
 <tr><td>Contact ID</td><td>
 <select name='contactid'>
 <?php
+if (isset($_GET['id']))
+{
+$contactid= $_GET['id'];
+$query = "SELECT * FROM tcontact where ContactID = $contactid";
+}
+else
+{
+$contactid= '';
 $query = "SELECT * FROM tcontact";
+}
+
 $result = mysql_query($query) or die(mysql_error());
 while ($newArray = mysql_fetch_array($result))
 	{

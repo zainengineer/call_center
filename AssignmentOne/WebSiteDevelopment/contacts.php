@@ -39,7 +39,7 @@ if (mysql_query($sql))
 <td>Phone</td>
 <td>MobilePhone</td>
 <td>Email</td>
-<td>UserID</td>
+<td>Add Event</td>
 <td>Events</td>
 <td>Edit</td>
 <td>Del</td>
@@ -61,7 +61,8 @@ $Email = $newArray['Email'];
 $UserID = $newArray['UserID'];
 //echo "<tr><td>$Name</td><td>$Address</td><td>$Town</td><td>$State</td><td>$PostCode</td><td>$Phone</td><td>$MobilePhone</td><td>$Email</td><td>$UserID</td></tr>";
 
-echo "<tr><td>$Name</td><td>$PostCode</td><td>$Phone</td><td>$MobilePhone</td><td>$Email</td><td>$UserID</td>
+echo "<tr><td>$Name</td><td>$PostCode</td><td>$Phone</td><td>$MobilePhone</td><td>$Email</td>
+<td><a href='addevent.php?id=$id'>Add Events</a></td>
 <td><a href='eventslog.php?id=$id'>Events</a></td>
 <td><a href='editcontact.php?id=$id'>Edit</a></td><td>
 <a href='contacts.php?delid=$id'>Del</a></td></tr>";

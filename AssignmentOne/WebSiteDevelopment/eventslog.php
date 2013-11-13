@@ -2,13 +2,15 @@
 require_once (dirname(__FILE__) . '/lib/common.php');
 forceUserLogin();
 include  (dirname(__FILE__) . '/header.php');
+$id = $_GET['id'];
 ?>
 <div class="layout-grid">
 <div id="jumps" class="layout-cell layout-1">
 <div>
 <img src="images/contact.png" alt="Events" />
 <h2>Events</h2>
-<a href="addevent.php">Add Event</a>
+
+<a href="addevent.php?id=<?=$id?>">Add Event</a>
 
 <?php
 if(isset($_GET['delid']))
@@ -41,7 +43,7 @@ if (mysql_query($sql))
 <td>Del</td>
 </tr>
 <?php
-$id = $_GET['id'];
+
 $query = "SELECT * FROM tevent where ContactID = $id";
 $result = mysql_query($query) or die(mysql_error());
 while ($newArray = mysql_fetch_array($result))
