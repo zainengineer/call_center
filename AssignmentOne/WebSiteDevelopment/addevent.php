@@ -24,7 +24,8 @@ if (mysql_query($sql))
 <div class="layout-grid">
 <div id="jumps" class="layout-cell layout-1">
 <div>
-<img src="images/contact.png" alt="Add Contact" />
+<img src="images/contact.png" alt="Add Contact" align="left" />
+<?php include("user-detail.php"); ?>
 <h2>Add Events</h2>
 <p>All fields required.</p>
 <form action="addevent.php" method="post">

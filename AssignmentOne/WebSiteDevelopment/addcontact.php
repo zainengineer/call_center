@@ -37,7 +37,7 @@ if (mysql_query($sql))
 <tr><td>Address</td><td>  <input type='text' name='Address'></td></tr>
 <tr><td>Town</td><td>  <input type='text' name='Town'></td></tr>
 <tr><td>State</td><td>  
-<select id="State">
+<select name="State">
 <option value="ACT">ACT</option>
 <option value="NSW">NSW</option>
 <option value="NT">NT</option>
@@ -51,7 +51,7 @@ if (mysql_query($sql))
 <tr><td>Phone</td><td>  <input type='text' name='Phone'></td></tr>
 <tr><td>MobilePhone</td><td>  <input type='text' name='MobilePhone'></td></tr>
 <tr><td>Email</td><td>  <input type='text' name='Email'></td></tr>
-<tr><td>UserID</td><td>  <input type='text' name='UserID'></td></tr>
+<!-- <tr><td>UserID</td><td>  <input type='text' name='UserID'></td></tr> -->
 <tr><td><input name="reset" type="reset" value="Reset"></td><td> <input name="Submit" type="submit" id="Submit" value="Add Contact"></td></tr>
 
 

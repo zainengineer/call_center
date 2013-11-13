@@ -29,7 +29,8 @@ if (mysql_query($sql))
 <div class="layout-grid">
 <div id="jumps" class="layout-cell layout-1">
 <div>
-<img src="images/contact.png" alt="Add Contact" />
+<img src="images/contact.png" alt="Add Contact" align="left" />
+<?php include("user-detail.php"); ?>
 <h2>Update Contact</h2>
 <p>All fields required.</p>
 <form action="" method="post">
@@ -60,7 +61,7 @@ echo "
 <tr><td>Address</td><td>  <input type='text' name='Address'  value='$Address'></td></tr>
 <tr><td>Town</td><td>  <input type='text' name='Town'  value='$Town'></td></tr>
 <tr><td>State</td><td>
-<select id='State'>
+<select name='State'>
 <option value='$State'>$State</option>
 <option value='ACT'>ACT</option>
 <option value='NSW'>NSW</option>
@@ -75,7 +76,7 @@ echo "
 <tr><td>Phone</td><td>  <input type='text' name='Phone'  value='$Phone'></td></tr>
 <tr><td>MobilePhone</td><td>  <input type='text' name='MobilePhone'  value='$MobilePhone'></td></tr>
 <tr><td>Email</td><td>  <input type='text' name='Email'  value='$Email'></td></tr>
-<tr><td>UserID</td><td>  <input type='text' name='UserID'  value='$UserID'></td></tr>";
+<!-- <tr><td>UserID</td><td>  <input type='text' name='UserID'  value='$UserID'></td></tr> -->";
 }
 ?>
 

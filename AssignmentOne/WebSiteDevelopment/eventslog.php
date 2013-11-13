@@ -7,7 +7,7 @@ $id = $_GET['id'];
 <div class="layout-grid">
 <div id="jumps" class="layout-cell layout-1">
 <div>
-<img src="images/contact.png" alt="Events" />
+<img src="images/contact.png" alt="Events" align="left" /><?php include("user-detail.php"); ?>
 <h2>Events</h2>
 
 <a href="addevent.php?id=<?=$id?>">Add Event</a>
