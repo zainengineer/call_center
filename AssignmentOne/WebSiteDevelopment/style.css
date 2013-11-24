@@ -80,3 +80,51 @@ aside{line-height:normal;margin-top:0!important;width:100%;border-radius:0;borde
 
 
 
+table
+{
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+	font-size: 12px;
+	margin: 4px;
+	width: 480px;
+	text-align: left;
+	border-collapse: collapse;
+}
+
+
+/*thead th.rounded-company*/
+tr:first-child td:first-child
+{
+	background: #b9c9fe url('images/left.png') left -1px no-repeat;
+}
+tr:first-child td:last-child
+{
+	background: #b9c9fe url('images/right.png') right -1px no-repeat;
+}
+tr:first-child td
+{
+	padding: 8px;
+	font-weight: normal;
+	font-size: 13px;
+	color: #039;
+	background: #b9c9fe;
+}
+td
+{
+	padding: 8px;
+	background: #e8edff;
+	border-top: 1px solid #fff;
+	color: #669;
+}
+
+tfoot td.rounded-foot-left
+{
+	background: #e8edff url('images/botleft.png') left bottom no-repeat;
+}
+tfoot td.rounded-foot-right
+{
+	background: #e8edff url('images/botright.png') right bottom no-repeat;
+}
+ tbody tr:hover td
+{
+	background: #d0dafd;
+}

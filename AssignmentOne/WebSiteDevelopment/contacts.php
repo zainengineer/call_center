@@ -28,7 +28,7 @@ if (mysql_query($sql))
   }
 }
 ?>
-			<table border='1'>
+			<table>
 <tr>
 <td>Name</td>
 <!--<td>Address</td>
