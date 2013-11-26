@@ -35,7 +35,11 @@ include(dirname(__FILE__) . '/header.php');
                     <td>Event ID</td>
                     <td>Notes</td>
                     <td>Date Entered</td>
-                    <td>User</td>
+                    <?php
+                    if (isset($_SESSION['user_role']) && $_SESSION['user_role']=='Admin' ){
+                        echo '<td>User</td>';
+                    }
+                    ?>
                     <td>Edit</td>
                     <td>Del</td>
                 </tr>
@@ -78,9 +82,14 @@ include(dirname(__FILE__) . '/header.php');
 
                             <td><a href='editcontact.php?id=<?php echo $contactId; ?>'><?php echo $contactName; ?></a>
                             </td>
+                        <?php
+                        if (isset($_SESSION['user_role']) && $_SESSION['user_role']=='Admin' ){
+                        ?>
                             <td><a href='edituser.php?id=<?php echo $userId; ?>'><?php echo $userName ; ?></a>
                             </td>
-
+                        <?php
+                        }
+                        ?>
                         <td><a href='editevent.php?id=<?php echo $id; ?>'>Edit</a></td>
                         <td><a href='events.php?delid=<?php echo $id; ?>'>Del</a></td>
                     </tr>
