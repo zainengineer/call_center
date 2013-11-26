@@ -1,6 +1,6 @@
 <?php
 require_once(dirname(__FILE__) . '/zincludethis.php');
-function forceUserLogin()
+function forceUserLogin($role=false)
 {
     if (!session_id()){
         session_start();
@@ -9,4 +9,9 @@ function forceUserLogin()
         header ('Location: login.php');
         exit;
     }
+	if ($role && isset($_SESSION['user_role']) && $_SESSION['user_role']!=$role ){
+		header ('Location: login.php');
+        exit;
+	}
+	
 }

@@ -1,6 +1,6 @@
 <?php
 require_once (dirname(__FILE__) . '/lib/common.php');
-forceUserLogin();
+forceUserLogin('Admin');
 include  (dirname(__FILE__) . '/header.php');
 $message = '';
 if (isset($_POST['Submit']))
@@ -29,7 +29,7 @@ if (mysql_query($sql))
 <div id="jumps" class="layout-cell layout-1">
 <div>
 <img src="images/contact.png" alt="Add Contact" />
-<h2>Update Event</h2>
+<h2>Update User</h2>
     <?php
       if ($message){
           echo "<h3 style='background-color: deepskyblue;width:250px'>$message</h3>";

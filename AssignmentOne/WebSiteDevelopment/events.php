@@ -35,6 +35,7 @@ include(dirname(__FILE__) . '/header.php');
                     <td>Event ID</td>
                     <td>Notes</td>
                     <td>Date Entered</td>
+					    <td>Contact ID</td>
                     <?php
                     if (isset($_SESSION['user_role']) && $_SESSION['user_role']=='Admin' ){
                         echo '<td>User</td>';

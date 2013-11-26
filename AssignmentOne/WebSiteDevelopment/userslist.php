@@ -1,6 +1,6 @@
 <?php
 require_once(dirname(__FILE__) . '/lib/common.php');
-forceUserLogin();
+forceUserLogin('Admin');
 include(dirname(__FILE__) . '/header.php');
 ?>
 <div class="layout-grid">
