@@ -36,7 +36,6 @@ include(dirname(__FILE__) . '/header.php');
                     <td>Notes</td>
                     <td>Date Entered</td>
                     <td>User</td>
-					<td>Added By</td>
                     <td>Edit</td>
                     <td>Del</td>
                 </tr>
@@ -50,8 +49,7 @@ include(dirname(__FILE__) . '/header.php');
                     $time_entered = $newArray['time_entered'];
                     $contactId = $newArray['contact_id'];
                     $userId = $newArray['user_id'];
-
-                  //  $userId = $newArray['contact_id'];
+                    $userId = $newArray['contact_id'];  
                     if (!$userId) {
                         $userId = '';
                     }
@@ -80,7 +78,8 @@ include(dirname(__FILE__) . '/header.php');
 
                             <td><a href='editcontact.php?id=<?php echo $contactId; ?>'><?php echo $contactName; ?></a>
                             </td>
-                            <td><?php echo $userName; ?>  </td> 
+                            <td><a href='edituser.php?id=<?php echo $userId; ?>'><?php echo $userName ; ?></a>
+                            </td>
 
                         <td><a href='editevent.php?id=<?php echo $id; ?>'>Edit</a></td>
                         <td><a href='events.php?delid=<?php echo $id; ?>'>Del</a></td>
