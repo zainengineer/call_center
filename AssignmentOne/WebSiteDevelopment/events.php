@@ -78,8 +78,8 @@ include(dirname(__FILE__) . '/header.php');
 
                             <td><a href='editcontact.php?id=<?php echo $contactId; ?>'><?php echo $contactName; ?></a>
                             </td>
-                            <!-- <td><a href='editcontact.php?id=<?php echo $contactId; ?>'><?php echo $contactName; ?></a> -->
-                            </td>
+                            <!-- <td><a href='edituser.php?id=<?php echo $userId; ?>'><?php echo $userName ; ?></a>
+                            </td>-->
 
                         <td><a href='editevent.php?id=<?php echo $id; ?>'>Edit</a></td>
                         <td><a href='events.php?delid=<?php echo $id; ?>'>Del</a></td>
