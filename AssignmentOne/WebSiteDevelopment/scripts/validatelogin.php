@@ -42,7 +42,7 @@ if (isset($_POST['submit'])) {
         // Best not to check whether data is set before we allow the user access.
         // We should only allow access is their details are correct.
         // I have moved this here so we can easily alter it here.
-            $sql= "SELECT UserID FROM tlogin WHERE ((UserName = '$username_email') or Email ='$username_email') AND (password = '$password') ";
+            $sql= "SELECT user_id FROM tlogin WHERE ((user_name = '$username_email') or email ='$username_email') AND (password = '$password') ";
             $userId = getQueryDefaultBySingleRow($sql);
             if ($userId){
                 $_SESSION['user_id'] = $userId;

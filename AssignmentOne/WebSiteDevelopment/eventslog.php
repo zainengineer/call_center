@@ -18,7 +18,7 @@ if(isset($_GET['delid']))
 
 $id = $_GET['delid'];
 
-$sql = "DELETE FROM tevent WHERE EventID = $id";
+$sql = "DELETE FROM tevent WHERE event_id = $id";
 if (mysql_query($sql))
   {
   echo "<b><i>Record Deleted</b></i>";
@@ -44,19 +44,19 @@ if (mysql_query($sql))
 </tr>
 <?php
 
-$query = "SELECT * FROM tevent where ContactID = $id";
+$query = "SELECT * FROM tevent where contact_id = $id";
 $result = mysql_query($query) or die(mysql_error());
 while ($newArray = mysql_fetch_array($result))
 	{
-$id = $newArray['EventID'];
+$id = $newArray['event_id'];
 $Notes = $newArray['Notes'];
-$DateEntered = $newArray['DateEntered'];
-$TimeEntered = $newArray['TimeEntered'];
-$ContactID = $newArray['ContactID'];
+$date_entered = $newArray['date_entered'];
+$time_entered = $newArray['time_entered'];
+$contact_id = $newArray['contact_id'];
 
-//echo "<tr><td>$Name</td><td>$Address</td><td>$Town</td><td>$State</td><td>$PostCode</td><td>$Phone</td><td>$MobilePhone</td><td>$Email</td><td>$UserID</td></tr>";
+//echo "<tr><td>$Name</td><td>$Address</td><td>$Town</td><td>$State</td><td>$post_code</td><td>$Phone</td><td>$MobilePhone</td><td>$Email</td><td>$user_id</td></tr>";
 
-echo "<tr><td>$id</td><td>$Notes</td><td>$DateEntered</td><td><a href='editevent.php?id=$id'>Edit</a></td><td>
+echo "<tr><td>$id</td><td>$Notes</td><td>$date_entered</td><td><a href='editevent.php?id=$id'>Edit</a></td><td>
 <a href='events.php?delid=$id'>Del</a></td></tr>";
 }
 			?>

@@ -1,21 +1,22 @@
 <?php
+
 require_once (dirname(__FILE__) . '/lib/common.php');
 forceUserLogin();
 include  (dirname(__FILE__) . '/header.php');
 if (isset($_POST['Submit']))
 {
 $id = $_POST['id'];
-$Name = $_POST['Name'];
-$Address = $_POST['Address'];
-$Town = $_POST['Town'];
-$State = $_POST['State'];
-$PostCode = $_POST['PostCode'];
-$Phone = $_POST['Phone'];
-$MobilePhone = $_POST['MobilePhone'];
-$Email = $_POST['Email'];
-$UserID = $_POST['UserID'];
-$sql = "UPDATE tcontact SET Name = '$Name', Address = '$Address', Town = '$Town', State = '$State', PostCode = '$PostCode', Phone = '$Phone', MobilePhone = '$MobilePhone', Email = '$Email', UserID = '$UserID' WHERE ContactID = $id";
-//$sql = "INSERT INTO tcontact VALUES ('', '$Name', '$Address', '$Town', '$State', '$PostCode', '$Phone', '$MobilePhone', '$Email', '$UserID')";
+$Name = $_POST['name'];
+$Address = $_POST['address'];
+$Town = $_POST['town'];
+$State = $_POST['state'];
+$post_code = $_POST['post_cdoe'];
+$Phone = $_POST['phone'];
+$MobilePhone = $_POST['mobile_phone'];
+$Email = $_POST['email'];
+$user_id = $_POST['user_id'];
+$sql = "UPDATE tcontact SET Name = '$Name', Address = '$Address', Town = '$Town', State = '$State', post_code = '$post_code', Phone = '$Phone', MobilePhone = '$MobilePhone', Email = '$Email', user_id = '$user_id' WHERE contact_id = $id";
+//$sql = "INSERT INTO tcontact VALUES ('', '$Name', '$Address', '$Town', '$State', '$post_code', '$Phone', '$MobilePhone', '$Email', '$user_id')";
 if (mysql_query($sql))
   {
   echo "Record updated";
@@ -39,20 +40,20 @@ if (mysql_query($sql))
 if(isset($_GET['id']))
 {
 $id = $_GET['id'];
-$query = "SELECT * FROM tcontact where ContactID = $id";
+$query = "SELECT * FROM tcontact where contact_id = $id";
 $result = mysql_query($query) or die(mysql_error());
 while ($newArray = mysql_fetch_array($result))
 	{
-$id = $newArray['ContactID'];
-$Name = $newArray['Name'];
-$Address = $newArray['Address'];
-$Town = $newArray['Town'];
-$State = $newArray['State'];
-$PostCode = $newArray['PostCode'];
-$Phone = $newArray['Phone'];
-$MobilePhone = $newArray['MobilePhone'];
-$Email = $newArray['Email'];
-$UserID = $newArray['UserID'];
+$id = $newArray['contact_id'];
+$Name = $newArray['name'];
+$Address = $newArray['address'];
+$Town = $newArray['town'];
+$State = $newArray['state'];
+$post_code = $newArray['post_code'];
+$Phone = $newArray['phone'];
+$MobilePhone = $newArray['mobile_phone'];
+$Email = $newArray['email'];
+$user_id = $newArray['user_id'];
 }
 echo "
 <tr><td>Name</td><td> 
@@ -72,11 +73,11 @@ echo "
 <option value='VIC'>VIC</option>
 <option value='WA'>WA</option>
 </select></td></tr>
-<tr><td>PostCode</td><td>  <input type='text' name='PostCode'  value='$PostCode'></td></tr>
+<tr><td>post_code</td><td>  <input type='text' name='post_code'  value='$post_code'></td></tr>
 <tr><td>Phone</td><td>  <input type='text' name='Phone'  value='$Phone'></td></tr>
 <tr><td>MobilePhone</td><td>  <input type='text' name='MobilePhone'  value='$MobilePhone'></td></tr>
 <tr><td>Email</td><td>  <input type='text' name='Email'  value='$Email'></td></tr>
-<!-- <tr><td>UserID</td><td>  <input type='text' name='UserID'  value='$UserID'></td></tr> -->";
+<!-- <tr><td>user_id</td><td>  <input type='text' name='user_id'  value='$user_id'></td></tr> -->";
 }
 ?>
 

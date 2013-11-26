@@ -6,11 +6,11 @@ if (isset($_POST['Submit']))
 {
 $id = $_POST['id'];
 $Notes = $_POST['Notes'];
-$DateEntered = $_POST['DateEntered'];
-$TimeEntered = $_POST['TimeEntered'];
+$date_entered = $_POST['date_entered'];
+$time_entered = $_POST['time_entered'];
 
-$sql = "UPDATE tevent SET Notes = '$Notes', DateEntered = '$DateEntered', TimeEntered = '$TimeEntered' WHERE EventID = $id";
-//$sql = "INSERT INTO tcontact VALUES ('', '$Name', '$Address', '$Town', '$State', '$PostCode', '$Phone', '$MobilePhone', '$Email', '$UserID')";
+$sql = "UPDATE tevent SET Notes = '$Notes', date_entered = '$date_entered', time_entered = '$time_entered' WHERE event_id = $id";
+//$sql = "INSERT INTO tcontact VALUES ('', '$Name', '$Address', '$Town', '$State', '$post_code', '$Phone', '$MobilePhone', '$Email', '$user_id')";
 if (mysql_query($sql))
   {
   echo "Record updated";
@@ -33,22 +33,22 @@ if (mysql_query($sql))
 if(isset($_GET['id']))
 {
 $id = $_GET['id'];
-$query = "SELECT * FROM tevent where EventID = $id";
+$query = "SELECT * FROM tevent where event_id = $id";
 $result = mysql_query($query) or die(mysql_error());
 while ($newArray = mysql_fetch_array($result))
 	{
-$id = $newArray['EventID'];
+$id = $newArray['event_id'];
 $Notes = $newArray['Notes'];
-$DateEntered = $newArray['DateEntered'];
-$TimeEntered = $newArray['TimeEntered'];
-$ContactID = $newArray['ContactID'];
+$date_entered = $newArray['date_entered'];
+$time_entered = $newArray['time_entered'];
+$contact_id = $newArray['contact_id'];
 
 }
 echo "
 <input type='hidden' name='id'  value='$id'>
 <tr><td>Notes</td><td>  <textarea name='Notes'>$Notes</textarea></td></tr>
-<tr><td>DateEntered</td><td>  <input type='text' name='DateEntered'  value='$DateEntered'></td></tr>
-<tr><td>TimeEntered</td><td>  <input type='text' name='TimeEntered'  value='$TimeEntered'></td></tr>
+<tr><td>date_entered</td><td>  <input type='text' name='date_entered'  value='$date_entered'></td></tr>
+<tr><td>time_entered</td><td>  <input type='text' name='time_entered'  value='$time_entered'></td></tr>
 ";
 }
 ?>

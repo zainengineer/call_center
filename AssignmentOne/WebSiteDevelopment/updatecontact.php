@@ -1,36 +1,9 @@
- <!DOCTYPE HTML>
-<html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
-<title>Contact Centre Update Contact</title>
-<link rel="stylesheet" href="style.css" type="text/css" title="contact-centre" />
-<script src="//html5shim.googlecode.com/svn/trunk/html5.js">
-</script>
-</head>
-<body class="home">
-<h1>Contact Centre</h1>
-<div id="jump">
-<a href="#jumps">jump to content</a>
-</div>
-<nav>
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="login.html">Login</a></li>
-<li><a href="contacts.html">Contacts</a></li>
-<li><a href="events.html">Events</a></li>
-</ul>
-</nav>
-<div class="layout-grid">
-<div id="jumps" class="layout-cell layout-1">
-<div>
-<img src="images/contact.png" alt="Update Contact" />
-<h2>Update Contact</h2>
 <?php
-include('scripts/userfunctions.php');
- header(' Location: scripts/validateupdatecontact.php'); 
-exit;
+require_once(dirname(__FILE__) . '/lib/common.php');
+forceUserLogin();
+include(dirname(__FILE__) . '/header.php');
 ?>
+
  <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 <?php
  // First Name field goes here.
@@ -105,10 +78,10 @@ exit;
  </span>
  </p>
  <p>
- <label for="postcode">Post Code:</label>
- <input type="text" name="postcode" id="postcode" autofocus value="<?php echo $postcode; ?>">
- <span class="error" id="postcode_error">
- <?php echo $msg_postcode;
+ <label for="post_code">Post Code:</label>
+ <input type="text" name="post_code" id="post_code" autofocus value="<?php echo $post_code; ?>">
+ <span class="error" id="post_code_error">
+ <?php echo $msg_post_code;
 ?>
 <?php
  // These variables need to match the error variables that are set in the validation script

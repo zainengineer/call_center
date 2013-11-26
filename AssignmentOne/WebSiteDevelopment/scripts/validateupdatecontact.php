@@ -5,7 +5,7 @@
    $MSG_ADDRESS = '';
    $MSG_TOWN = '';
    $MSG_STATE = '';
-   $MSG_POSTCODE = '';
+   $MSG_post_code = '';
    $MSG_PHONE = '';
    $MSG_MOBILEPHONE = '';
    $msg_email = '';
@@ -15,7 +15,7 @@
    $address = '';
    $town = '';
    $state = '';
-   $postcode = '';
+   $post_code = '';
    $phone = '';
    $mobilephone = '';
    $email = '';
@@ -29,7 +29,7 @@
    $address = trim($_POST['address']);
    $town = trim($_POST['town']);
    $state = trim($_POST['state']);
-   $postcode = trim($_POST['postcode']);
+   $post_code = trim($_POST['post_code']);
    $phone = trim($_POST['phone']);
    $mobilephone = trim($_POST['mobilephone']);
    $email = trim($_POST['email']);
@@ -157,21 +157,21 @@
    $msg_state = 'You have selecdted a state:';
  }
 } 
-  if(empty($postcode))
+  if(empty($post_code))
  {
  // Check if field is empty first before any more validating, just so we don't display wrong messages.
-   $msg_postcode = '* Please enter your postcode';
+   $msg_post_code = '* Please enter your post_code';
    $errors++;
  }
-  else if(preg_match('/\d/', $postcode))
+  else if(preg_match('/\d/', $post_code))
  {
  // This seems to work a lot better than the other way.
-   $msg_postcode = "Only numbers can be entered for this field!";
+   $msg_post_code = "Only numbers can be entered for this field!";
    $errors++;
  }
-  else if(strlen($postcode) > 50)
+  else if(strlen($post_code) > 50)
  {
-   $msg_postcode = "Invalid Postcode";
+   $msg_post_code = "Invalid post_code";
    $errors++;
  }
   if(empty($phone))
@@ -237,7 +237,7 @@
    $connection =mysql_connect('localhost', 'root', '');
    $db=mysql_select_db($database, $connection) or die("Unable to select database"); 
    $result = $mysql_query($query, $connection) or die("Error in query: ".mysql_error())";
-  if($result = mysql_query("UPDATE  contacts SET firstname = 'Marvin', lastname = 'Hunkin', address = '28 Hazeltine Drive', town = 'Seaford Rise', state = 'SA', postcode = '5169', phone = '(08) 8327 4059', mobilephone = '0404 800 900', email = 'startrekcafe@gmail.com'"))
+  if($result = mysql_query("UPDATE  contacts SET firstname = 'Marvin', lastname = 'Hunkin', address = '28 Hazeltine Drive', town = 'Seaford Rise', state = 'SA', post_code = '5169', phone = '(08) 8327 4059', mobilephone = '0404 800 900', email = 'startrekcafe@gmail.com'"))
  {
    while($row = mysql_fetch_array($result))
  {
@@ -263,7 +263,7 @@
   echo "</tr>";
   echo "<tr>";
   echo "<td><h2>Post Code:</h2></td>";
-  echo "<td>".$row['postcode']."</td>";
+  echo "<td>".$row['post_code']."</td>";
   echo "</tr>";
   echo "<tr>";
   echo "<td><h2>Phone:</h2></td>";

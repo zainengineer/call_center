@@ -86,8 +86,8 @@ if (isset($_POST['submit'])) {
             $connection = mysql_connect('localhost', 'root', '');
             $db = mysql_select_db($database, $connection) or die("Unable to select database");
             $query = "INSERT INTO tlogin (
-UserName ,
-Email ,
+user_name ,
+email ,
 password
 
 )

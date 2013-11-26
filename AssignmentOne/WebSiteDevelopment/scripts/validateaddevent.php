@@ -1,19 +1,19 @@
  <?php
  //Initialize Error Variables.
    $msg_notes = '';
-   $msg_dateentered = '' ;
-   $msg_timeentered = '';
+   $msg_date_entered = '' ;
+   $msg_time_entered = '';
    $notes = '';
-   $dateentered = '';
-   $timeentered = '';
+   $date_entered = '';
+   $time_entered = '';
  // Vallidation of the form starts here.  Vallidation Of variables and match invalid or valid characters.
   if(isset($_POST['submit']))
  {
   $errors = 0;
  //  Validate all your form variables here instead of throughout the script. It helps to keep things grouped and tidy.
    $notes = trim($_POST['notes']);
-   $dateentered = trim($_POST['dateentered']);
-   $timeentered = trim($_POST['timeentered']);
+   $date_entered = trim($_POST['date_entered']);
+   $time_entered = trim($_POST['time_entered']);
   if(empty($notes))
  {
  // Check if field is empty first before any more validating, just so we don't display wrong messages.
@@ -31,21 +31,21 @@
    $msg_notes = "You have exceded the maxium amount of characters for this field!";
    $errors++;
  }
-  if(empty($dateentered))
+  if(empty($date_entered))
  {
  // Check if field is empty first before any more validating, just so we don't display wrong messages.
-   $msg_timeentered = '* Please enter your date';
+   $msg_time_entered = '* Please enter your date';
    $errors++;
  }
-  else if(preg_match('/\d/', $dateentered))
+  else if(preg_match('/\d/', $date_entered))
  {
  // This seems to work a lot better than the other way.
    $msg_dateentred = "Only numbers can be entered for this field!";
    $errors++;
  }
-  else if(strlen($dateentered) > 50)
+  else if(strlen($date_entered) > 50)
  {
-   $msg_dateentered = "Invalid date entered";
+   $msg_date_entered = "Invalid date entered";
    $errors++;
  }
  // function to check valid date and is formatted.
@@ -58,21 +58,21 @@
  // check the date and time is correct.
    var_dump(checkdate(12, 31, 2013));
    var_dump(checkdate(2, 29, 2013));
-  if(empty($timeentered))
+  if(empty($time_entered))
  {
  // Check if field is empty first before any more validating, just so we don't display wrong messages.
-   $msg_timeentered = '* Please enter your time';
+   $msg_time_entered = '* Please enter your time';
    $errors++;
  }
-  else if(preg_match('/\d/', $timeentered))
+  else if(preg_match('/\d/', $time_entered))
  {
  // This seems to work a lot better than the other way.
-   $msg_timeentered = "Only characters can be entered for this field!";
+   $msg_time_entered = "Only characters can be entered for this field!";
    $errors++;
  }
-  else if(strlen($timeentered) > 50)
+  else if(strlen($time_entered) > 50)
  {
-   $msg_timeentered = "Invalid time";
+   $msg_time_entered = "Invalid time";
    $errors++;
  }
  // function to check valid time and is formatted.
@@ -100,7 +100,7 @@
    $database = "contactcentre";
    $connection =mysql_connect('localhost', 'root', '');
    $db=mysql_select_db($database, $connection) or die("Unable to select database"); 
-   $query = "insert into events(notes, dateentered, timeentered)";
+   $query = "insert into events(notes, date_entered, time_entered)";
    $result = $mysql_query($query, $connection) or die("Error in query: ".mysql_error());
   if($result = mysql_query("SELECT * FROM contacts"))
  {
@@ -116,10 +116,10 @@
   echo "</tr>";
   echo "<tr>";
   echo "<td><h2>Date Entered:</h2></td>";
-  echo "<td>".$row['dateentered']."</td>";
+  echo "<td>".$row['date_entered']."</td>";
   echo "</tr>";
   echo "<td><h2>Time Entered:</h2></td>";
-  echo "<td>".$row['timeentered']."</td>";
+  echo "<td>".$row['time_entered']."</td>";
   echo "</tr>";
   echo "</table>";
  }

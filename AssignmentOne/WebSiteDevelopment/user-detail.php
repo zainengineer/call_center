@@ -3,20 +3,20 @@ if (isset($_GET['id']))
 {
 $id = $_GET['id'];
 
-$query = "SELECT * FROM tcontact where ContactID = $id";
+$query = "SELECT * FROM tcontact where contact_id = $id";
 $result = mysql_query($query) or die(mysql_error());
 while ($newArray = mysql_fetch_array($result))
 {
-$id = $newArray['ContactID'];
-$Name = $newArray['Name'];
-$Address = $newArray['Address'];
-$Town = $newArray['Town'];
-$State = $newArray['State'];
-$PostCode = $newArray['PostCode'];
-$Phone = $newArray['Phone'];
-$MobilePhone = $newArray['MobilePhone'];
-$Email = $newArray['Email'];
-//$UserID = $newArray['UserID'];
+$id = $newArray['contact_id'];
+$Name = $newArray['name'];
+$Address = $newArray['address'];
+$Town = $newArray['town'];
+$State = $newArray['state'];
+$post_code = $newArray['post_code'];
+$Phone = $newArray['phone'];
+$MobilePhone = $newArray['mobile_phone'];
+$Email = $newArray['email'];
+//$user_id = $newArray['user_id'];
 }
 
 echo "<table>
@@ -25,7 +25,7 @@ echo "<table>
 <tr><td>Address</td><td>$Address</td></tr>
 <tr><td>Town</td><td>$Town</td></tr>
 <tr><td>State</td><td>$State</td></tr>
-<tr><td>PostCode</td><td>$PostCode</td></tr>
+<tr><td>post_code</td><td>$post_code</td></tr>
 <tr><td>Phone</td><td>$Phone</td></tr>
 <tr><td>MobilePhone</td><td>$MobilePhone</td></tr>
 <tr><td>Email</td><td>$Email</td></tr>
