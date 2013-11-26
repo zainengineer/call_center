@@ -8,7 +8,7 @@ if (!session_id()){
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>Contact Centre Login</title>
+<title>Contact Centre</title>
 <link rel="stylesheet" href="style.css" type="text/css" title="contact-centre" />
 <script src="//html5shim.googlecode.com/svn/trunk/html5.js">
 </script>
