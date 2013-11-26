@@ -3,12 +3,15 @@ require_once(dirname(__FILE__) . '/lib/common.php');
 forceUserLogin();
 include(dirname(__FILE__) . '/header.php');
 if (isset($_POST['Submit'])) {
-    $Notes = $_POST['notes'];
-    $date_entered = $_POST['date_entered'];
-    $time_entered = $_POST['time_entered'];
-    $contactId = $_POST['contact_id'];
+    $data = array();
+    $data['notes'] = $_POST['notes'];
+    $data['date_entered'] = $_POST['date_entered'];
+    $data['time_entered'] = $_POST['time_entered'];
+    $data['contact_id']= $_POST['contact_id'];
 
-    $sql = "INSERT INTO tevent VALUES ('', '$Notes', '$date_entered', '$time_entered', '$contactId')";
+
+
+    $sql = GetInsertQuery('tevent',$data);
     if (mysql_query($sql)) {
         echo "Record Added";
     }
@@ -31,7 +34,7 @@ if (isset($_POST['Submit'])) {
                 <table>
                     <tr>
                         <td>Notes</td>
-                        <td><textarea name='Notes'> </textarea></td>
+                        <td><textarea name='notes' rows="5" cols="40"></textarea></td>
                     </tr>
                     <tr>
                         <td>date_entered</td>
@@ -44,21 +47,21 @@ if (isset($_POST['Submit'])) {
                     <tr>
                         <td>Contact ID</td>
                         <td>
-                            <select name='contactid'>
+                            <select name='contact_id'>
                                 <?php
                                 if (isset($_GET['id'])) {
-                                    $contactid = $_GET['id'];
+                                    $contactId = $_GET['id'];
                                     $query = "SELECT * FROM tcontact WHERE contact_id = $contactId";
                                 }
                                 else {
-                                    $contactid = '';
+                                    $contactId = '';
                                     $query = "SELECT * FROM tcontact";
                                 }
 
                                 $result = mysql_query($query) or die(mysql_error());
                                 while ($newArray = mysql_fetch_array($result)) {
                                     $id = $newArray['contact_id'];
-                                    $Name = $newArray['Name'];
+                                    $Name = $newArray['name'];
 //$Address = $newArray['Address'];
 //$Town = $newArray['Town'];
 //$State = $newArray['State'];

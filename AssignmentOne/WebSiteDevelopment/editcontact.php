@@ -15,7 +15,7 @@ $Phone = $_POST['phone'];
 $MobilePhone = $_POST['mobile_phone'];
 $Email = $_POST['email'];
 $user_id = $_POST['user_id'];
-$sql = "UPDATE tcontact SET Name = '$Name', Address = '$Address', Town = '$Town', State = '$State', post_code = '$post_code', Phone = '$Phone', MobilePhone = '$MobilePhone', Email = '$Email', user_id = '$user_id' WHERE contact_id = $id";
+$sql = "UPDATE tcontact SET name = '$Name', address = '$Address', town = '$Town', state = '$State', post_code = '$post_code', phone = '$Phone', mobile_phone = '$MobilePhone', email = '$Email', user_id = '$user_id' WHERE contact_id = $id";
 //$sql = "INSERT INTO tcontact VALUES ('', '$Name', '$Address', '$Town', '$State', '$post_code', '$Phone', '$MobilePhone', '$Email', '$user_id')";
 if (mysql_query($sql))
   {

@@ -57,7 +57,7 @@ include(dirname(__FILE__) . '/header.php');
                     $userName = '';
 
                     if ($contactId) {
-                        $sql = "'select name FROM tcontact WHERE contact_id = $contactId";
+                        $sql = "select name FROM tcontact WHERE contact_id = $contactId";
                         $contactName = getQueryDefaultBySingleRow($sql);
                     }
                     if ($userId) {
@@ -81,7 +81,7 @@ include(dirname(__FILE__) . '/header.php');
                             <!-- <td><a href='editcontact.php?id=<?php echo $contactId; ?>'><?php echo $contactName; ?></a> -->
                             </td>
 
-                        <td><a href='updateevent.php?id=<?php echo $id; ?>'>Edit</a></td>
+                        <td><a href='editevent.php?id=<?php echo $id; ?>'>Edit</a></td>
                         <td><a href='events.php?delid=<?php echo $id; ?>'>Del</a></td>
                     </tr>
 <?php
