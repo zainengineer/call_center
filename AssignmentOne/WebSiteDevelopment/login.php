@@ -10,22 +10,27 @@ include  (dirname(__FILE__)  . '/header.php');
 <h2> Contact Centre Login</h2>
 
  <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
- <p>
- <label for="username_email">User:</label>
+                   <table>
+<tr><td></td><td></td></tr>
+<tr><td>
+ <label for="username_email">User:</label></td><td>
  <input type="text" name="username_email" id="username_email" autofocus value="<?php echo $username_email; ?>">
  <span class="error" id="username_error">
  <?php echo $msg_username; // These variables need to match the error variables that are set in the validation script ?></span>
- </p>
+</td></tr>
 
- <p>
- <label for="password">Password:</label>
+<tr><td>
+ <label for="password">Password:</label></td><td>
  <input type="password" name="password" id="password" value="<?php echo $password; ?>">
  <span class="error" id="password_error">
  <?php echo $msg_password; ?></span>
- </p>
- <p>
+</td></tr>
+
+ <tr><td></td><td>
 
  <input type="submit" name="submit" value="Login">
+ </td></tr>
+ </table>
  </form>
 
 </div>

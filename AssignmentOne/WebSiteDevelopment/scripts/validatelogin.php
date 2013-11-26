@@ -46,6 +46,9 @@ if (isset($_POST['submit'])) {
             $userId = getQueryDefaultBySingleRow($sql);
             if ($userId){
                 $_SESSION['user_id'] = $userId;
+				  $sql1= "SELECT role FROM tlogin WHERE ((user_name = '$username_email') or email ='$username_email') AND (password = '$password') ";
+            $userRole = getQueryDefaultBySingleRow($sql1);
+				 $_SESSION['user_role'] = $userRole;
                 header('Location: contacts.php');
                 exit;
             }

@@ -47,11 +47,34 @@ $id = $newArray['event_id'];
 $notes = $newArray['notes'];
 $date_entered = $newArray['date_entered'];
 $time_entered = $newArray['time_entered'];
-$contact_id = $newArray['contact_id'];
+$contactId = $newArray['contact_id'];
+$userId = $newArray['user_id'];
 
+                    if (!$userId) {
+                        $userId = '';
+                    }
+                    $contactName = '';
+                    $userName = '';
+
+                    if ($contactId) {
+                        $sql = "select name FROM tcontact WHERE contact_id = $contactId";
+                        $contactName = getQueryDefaultBySingleRow($sql);
+                    }
+                    if ($userId) {
+                        $sql = "select user_name,email FROM tlogin  WHERE user_id= $userId";
+                        $row = GetSingleRow($sql);
+                        if ($row) {
+                            $userName = $row['user_name'];
+                            if (!$userName) {
+                                $userName = $row['email'];
+                            }
+                        }
+                    }
+					
 }
 echo "
 <input type='hidden' name='id'  value='$id'>
+<tr><td></td><td>User Name: <i> $userName </i>| Contact Name: <i>$contactName</i></td></tr>
 <tr><td>Notes</td><td>  <textarea name='notes' rows='5' cols = '50'>$notes</textarea></td></tr>
 <tr><td>date_entered</td><td>  <input type='text' name='date_entered'  value='$date_entered'></td></tr>
 <tr><td>time_entered</td><td>  <input type='text' name='time_entered'  value='$time_entered'></td></tr>

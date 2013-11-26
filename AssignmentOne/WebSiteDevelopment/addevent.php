@@ -8,7 +8,7 @@ if (isset($_POST['Submit'])) {
     $data['date_entered'] = $_POST['date_entered'];
     $data['time_entered'] = $_POST['time_entered'];
     $data['contact_id']= $_POST['contact_id'];
-
+$data['user_id']=  $_SESSION['user_id'];
 
 
     $sql = GetInsertQuery('tevent',$data);
