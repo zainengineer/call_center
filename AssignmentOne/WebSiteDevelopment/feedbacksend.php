@@ -1,4 +1,4 @@
- <?php
+<?php
 require_once (dirname(__FILE__) . '/lib/common.php');
 //forceUserLogin();
 include  (dirname(__FILE__) . '/header.php');
@@ -34,7 +34,6 @@ include('scripts/userfunctions.php');
 <h2>Feedback</h2>
 <p>Thank you for sending me comments about this website.  Stop by any time to visit my web page.</p>
 <p><a href="index.html">Return to Contact Centre</a></p>
-</a></p>
 </div>
 </div>
 </div><!--/grid-->

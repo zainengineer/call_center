@@ -8,7 +8,6 @@ include  (dirname(__FILE__)  . '/header.php');
 </div>
 </div>
 </div><!--/grid-->
-<nav>
 <?php
 include  (dirname(__FILE__)  . '/footer.php');
 ?>

@@ -27,7 +27,7 @@ html,body,h1,aside,nav ul, nav li a,nav ul li b,nav li a:hover,nav li a:focus,na
 {background-image:-moz-linear-gradient(rgba(255,255,255,.4),rgba(255,255,255,0));
 background-image:-o-linear-gradient(rgba(255,255,255,.4),rgba(255,255,255,0));
 background-image:-webkit-linear-gradient(rgba(255,255,255,.4),rgba(255,255,255,0));
-background-image:inear-gradient(rgba(255,255,255,.4),rgba(255,255,255,0))}
+background-image:linear-gradient(rgba(255,255,255,.4),rgba(255,255,255,0))}
 
 nav{margin:.75em auto 0;text-align:center;width:99.7%;box-shadow:1px 3px 8px rgb(150,150,150)}
 nav ul{background-color:#4682B4;margin:0;padding:.75em 0}
@@ -45,7 +45,7 @@ body.contact form{font-size:115%!important}
 p span{color:red}
 
 /* IE7, IE8 ***********************/
- body{border/*\**/:1px dotted red\9}
+ body{border/*\**/:1px dotted red}
 /**********************************/
 
 @media(max-width:1050px){
@@ -63,18 +63,18 @@ nav li{width:20%}}/*mind last brace*/
 @media(max-width:650px){
 html,body{background:rgb(240,240,240)!important}
 body{margin:0 3%!important}
-html,body,h1,aside,nav,nav ul, nav li a,nav ul li b,nav li a:hover,nav li a:focus,nav li a:active{background-image:none!important;box-shadow:0!important}
+html,body,h1,aside,nav,nav ul, nav li a,nav ul li b,nav li a:hover,nav li a:focus,nav li a:active{background-image:none!important;box-shadow:none !important}
 .layout-grid{margin:0 auto;overflow:hidden;width:100%}
 .layout-cell{display:block;margin:0 auto;width:100%}
 .layout-cell:nth-child(even){display:none}
-.layout-1{padding:1.5em 0 .75em 0;border-radius:0;border-radius:none}
-h1{font-size:140%;line-height:normal;width:100%;border-radius:0;border-radius:none}
-nav{margin-top:0;text-align:left;width:100%;box-shadow:0}
+.layout-1{padding:1.5em 0 .75em 0;border-radius:0;}
+h1{font-size:140%;line-height:normal;width:100%;border-radius:0;}
+nav{margin-top:0;text-align:left;width:100%;box-shadow:none}
 nav ul{}
 nav li{display:block;margin:3px auto;width:96%}
 nav li a,
-nav ul li b{padding:.35em 1% .35em 7%;box-shadow:0}
-aside{line-height:normal;margin-top:0!important;width:100%;border-radius:0;border-radius:none}}/*mind last brace*/
+nav ul li b{padding:.35em 1% .35em 7%;box-shadow:none}
+aside{line-height:normal;margin-top:0!important;width:100%;border-radius:0px;}}/*mind last brace*/
 
 
 

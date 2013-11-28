@@ -17,7 +17,7 @@ E-mail:
 <input name="email" type="text" size="50" maxlength="50">
 <br />
 Comments:
-<textarea name="comments" cols="32" rows="15"></textarea>
+<textarea name="message" cols="32" rows="15"></textarea>
 <br />
 <input name="submit" type="submit" value="Send Feedback">
 <br />
