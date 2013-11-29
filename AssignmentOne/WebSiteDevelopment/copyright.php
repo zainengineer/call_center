@@ -1,7 +1,6 @@
 <?php
-require_once (dirname(__FILE__) . '/lib/common.php');
-//forceUserLogin();
-include  (dirname(__FILE__) . '/header.php');
+require_once(dirname(__FILE__) . '/lib/common.php');
+include(dirname(__FILE__) . '/header.php');
 ?>
 <div class="layout-grid">
 <div id="jumps" class="layout-cell layout-1">
@@ -13,5 +12,5 @@ include  (dirname(__FILE__) . '/header.php');
 </div>
 </div><!--/grid-->
 <?php
-include  (dirname(__FILE__)  . '/footer.php');
+include(dirname(__FILE__) . '/footer.php');
 ?>
