@@ -95,7 +95,7 @@ echo " <tr>
 <tr>
 <td>Email:</td>
 <td><input type='text' name='Email'  value='$Email'></td>
-</tr>
+</tr>";
 }
 ?>
 <tr>

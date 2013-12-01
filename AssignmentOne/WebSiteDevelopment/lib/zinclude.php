@@ -26,8 +26,8 @@ if($EscapeString)
 {
 $value = mysql_escape_string($value);
 }		
-$fields . = $comma . "$field";
-$values . = $comma . "'$value'";
+$fields .= $comma ." $field";
+$values .= $comma . "'$value'";
 $comma = " , ";
 }
 $sql  = "INSERT INTO $Table ($fields) VALUES ($values) ";
@@ -41,9 +41,9 @@ function GetInsertQuery($Table, $array, $ReplaceNow = true)
 {
 $sql  = "INSERT INTO $Table";
 // implode keys of $array...
- $sql . = " (`".implode("`, `", array_keys($array))."`)";
+ $sql .= " (`".implode("`, `", array_keys($array))."`)";
 // implode values of $array...
-$sql . = " VALUES('".implode("', '", $array)."') ";
+$sql .= " VALUES('".implode("', '", $array)."') ";
 if($ReplaceNow)
 {
 $sql = str_replace("'now()'","now()", $sql);
@@ -60,7 +60,7 @@ if($EscapeString)
 {
 $value = mysql_escape_string($value);
 }
-$sql . = $comma . " $field = '$value'";
+$sql .= $comma . " $field = '$value'";
 $comma = ",";
 }
 if($where)
@@ -71,7 +71,7 @@ if($ReplaceNow)
 {
 $sql = str_replace("'now()'","now()", $sql);
 }
-$sql . = $where;
+$sql .= $where;
 return $sql;
 }
 function GetUSStatesArray($AddSelect = true)
@@ -161,8 +161,9 @@ if($UseValuesForBoth)
 $optionkey = $optionvalue;
 }
 ?>
-<option value = "<? = $optionkey ?> " <? = $selectshow ?>> <? = $optionvalue ?>
+<option value = "<?= $optionkey ?> " <?= $selectshow ?>> <?= $optionvalue ?>
 </option>
+<?php
 }
 ?>
 </select>
@@ -170,7 +171,7 @@ $optionkey = $optionvalue;
 }
 function ShowStateCombo($name, $selectedcode)
 {
-states = GetUSStatesArray();
+$states = GetUSStatesArray();
 ShowSelect($name, $states, $selectedcode);
 }
 function printr($object, $name = '')
@@ -310,7 +311,7 @@ foreach($List as $key => $value)
 {
 $encodedkey=urlencode($key);
 $encodedvalue = urlencode($value);
-$return . = $FirstSeperatedChar . $encodedkey . "=" . $encodedvalue;
+$return .= $FirstSeperatedChar . $encodedkey . "=" . $encodedvalue;
 $FirstSeperatedChar = "&";
 }
 return $return;
