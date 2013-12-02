@@ -1,6 +1,6 @@
 <?php
 require_once(dirname(__FILE__) . '/lib/common.php');
-include(dirname(__FILE__) . '/header.php');
+$msg = '';
 if(isset($_POST['submit']))
 {
 $data = array();
@@ -11,13 +11,20 @@ $data['role']= "User";
 $sql = GetInsertQuery('tlogin',$data);
 if(mysql_query($sql))
 {
-echo "Record Added";
+$msg =  "Record Added";
+$id = mysql_insert_id();
+$url = "edituser.php?id=$id&msg=" . urlencode($msg);
+header("Location: $url");
+exit;
 }
 else
 {
-echo "Error : " . mysql_error();
+$msg= "Error : " . mysql_error();
 }
+
 }
+include(dirname(__FILE__) . '/header.php');
+echo $msg;
 ?>
 <div class="layout-grid">
 <div id="jumps" class="layout-cell layout-1">
@@ -31,7 +38,7 @@ include('scripts/validatecreate.php');
 <table>
 <tr>
 <td><label for="username">User Name:</label></td>
-<td><input type="text" name="username" id="username" autofocus value="<?php echo $username; ?> ">
+<td><input type="text" name="username" id="username" autofocus value="<?php echo $username; ?>">
 <span class="error" id="username_error">
 <?php echo $msg_username; // These variables need to match the error variables that are set in the validation script ?></span>
 </td>

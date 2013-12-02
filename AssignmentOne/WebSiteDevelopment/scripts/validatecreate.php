@@ -17,7 +17,6 @@ if(isset($_POST['submit']))
     $username = trim($_POST['username']);
     $email = trim($_POST['email']);
     $password = trim($_POST['password']);
-    $confirm_password = trim($_POST['confirm_password']);
     if(empty($username))
 {
 // Check if field is empty first before any more validating, just so we don't display wrong messages.
@@ -69,9 +68,9 @@ $msg_confirm_password = '* Invalid password';
 $errors++;
 }
 // Check to see if the password and confirm password fields match.
-if($password !== $confirm_password)
+if($password !== false)
 {
-echo 'The two passwords do not match! Please try again!';
+$msg_confirm_password = '* Invalid password';
 $errors++;
 }
 // No need to check whether numbers are in the password, because some people might have numbers in their password.

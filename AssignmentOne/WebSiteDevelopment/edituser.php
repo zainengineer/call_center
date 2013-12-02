@@ -3,6 +3,10 @@ require_once(dirname(__FILE__) . '/lib/common.php');
 forceUserLogin('Admin');
 include(dirname(__FILE__) . '/header.php');
 $message = '';
+if (isset($_GET['msg'])){
+$message = $_GET['msg'];
+}
+
 if (isset($_POST['Submit']))
 {
 $id = $_POST['id'];

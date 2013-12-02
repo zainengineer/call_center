@@ -46,9 +46,9 @@ while($newArray = mysql_fetch_array($result))
 {
 $id = $newArray['contact_id'];
 $Name = $newArray['name'];
-$Address = $newArray['Address'];
-$Town = $newArray['Town'];
-$State = $newArray['State'];
+$Address = $newArray['address'];
+$Town = $newArray['town'];
+$State = $newArray['state'];
 $post_code = $newArray['post_code'];
 $Phone = $newArray['phone'];
 $MobilePhone = $newArray['mobile_phone'];
