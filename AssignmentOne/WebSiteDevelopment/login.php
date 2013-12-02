@@ -24,6 +24,7 @@ include(dirname(__FILE__) . '/header.php');
 </tr>
 <tr>
 <td><input type="submit" name="submit" value="Login"></td>
+<td>&nbsp;</td>
 </tr>
 </table>
 </form>

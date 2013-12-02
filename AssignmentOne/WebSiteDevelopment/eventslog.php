@@ -7,7 +7,7 @@ $id = $_GET['id'];
 <div class="layout-grid">
 <div id="jumps" class="layout-cell layout-1">
 <div>
-<img src="images/contact.png" alt="Events" align="left" /><?php include("user-detail.php"); ?>
+<img src="images/contact.png" alt="Events" style="float: left" /><?php include("user-detail.php"); ?>
 <h2>Events</h2>
 <a href="addevent.php?id=<?=$id?>">Add Event</a>
 <?php
@@ -39,11 +39,15 @@ $result = mysql_query($query) or die(mysql_error());
 while($newArray = mysql_fetch_array($result))
 {
 $id = $newArray['event_id'];
-$Notes = $newArray['Notes'];
+$Notes = $newArray['notes'];
 $date_entered = $newArray['date_entered'];
 $time_entered = $newArray['time_entered'];
-echo "<tr><td>$id</td><td>$Notes</td><td>$date_entered</td><td><a href='editevent.php?id=$id'>Edit</a></td><td>
-<a href='events.php?delid=$id'>Delete</a></td>
+echo "<tr>
+<td>$id</td>
+<td>$Notes</td>
+<td>$date_entered</td>
+<td><a href='editevent.php?id=$id'>Edit</a></td>
+<td><a href='events.php?delid=$id'>Delete</a></td>
 </tr>";
 }
 ?>

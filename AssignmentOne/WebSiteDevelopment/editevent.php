@@ -32,7 +32,7 @@ echo "<h3 style = 'background-color: deepskyblue;width:250px'>$message</h3>";
 }
 ?>
 <p>All fields required.</p>
-<form action="" method="post">
+<form action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="post">
 <table>
 <?php
 if(isset($_GET['id']))
@@ -73,16 +73,22 @@ $userName = $row['email'];
 }
 }
 }
-echo " <tr>
-<td><input type='hidden' name='id'  value='$id'></td>
+echo "
+
+
+<tr>
+<td>User Name:</td>
+<td>$userName</td>
 </tr>
 <tr>
-<td>User Name:<i> $userName </i> | Contact Name: <i> $contactName</i></td>
+<td>Contact Name:</td>
+<td>$contactName</td>
+</tr>
+<input type='hidden' name='id'  value='$id'></td>
 </tr>
 <tr>
 <td>Notes:</td>
-<td><textarea name='notes' rows='5' cols='50'> $notes
-</textarea></td>
+<td><textarea name='notes' rows='5' cols='50'>$notes</textarea></td>
 </tr>
 <tr>
 <td>Date Entered:</td>

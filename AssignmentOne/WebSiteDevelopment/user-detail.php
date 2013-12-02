@@ -18,7 +18,7 @@ $Email = $newArray['email'];
 }
 echo "<table>
 <tr>
-<td><a href='editcontact.php?id=$id'>Edit</a></td>
+<td colspan='2'><a href='editcontact.php?id=$id'>Edit</a></td>
 </tr>
 <tr>
 <td>Name:</td>

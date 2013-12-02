@@ -37,7 +37,7 @@ echo "<h3 style = 'background-color: deepskyblue;width:250px'>$message</h3>";
 }
 ?>
 <p>All fields required.</p>
-<form action="" method="post">
+<form action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="post">
 <table>
 <?php
 if(isset($_GET['id']))
@@ -54,12 +54,12 @@ $password = $newArray['password'];
 $date_accessed = $newArray['date_accessed'];
 $role  = $newArray['role'];
 }
-echo " <tr>
-<td><input type='hidden' name='id'  value='$id'></td>
-</tr>
+echo "
 <tr>
 <td>User Name:</td>
-<td><input type='text' name='user_name'  value='$user_name'></td>
+<td><input type='text' name='user_name'  value='$user_name'>
+<input type='hidden' name='id'  value='$id'>
+</td>
 </tr>
 <tr>
 <td>Email:</td>

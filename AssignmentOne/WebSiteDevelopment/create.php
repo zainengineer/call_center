@@ -57,6 +57,7 @@ include('scripts/validatecreate.php');
 </tr>
 <tr>
 <td><input type="submit" name="submit" value="Sign Up"></td>
+<td>&nbsp;</td>
 </tr>
 </table>
 </form>

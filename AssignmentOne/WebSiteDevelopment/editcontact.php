@@ -32,7 +32,7 @@ echo "Error : " . mysql_error();
 <?php include("user-detail.php"); ?>
 <h2>Update Contact</h2>
 <p>All fields required.</p>
-<form action="" method="post">
+<form action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="post">
 <table>
 <?php
 if(isset($_GET['id']))
